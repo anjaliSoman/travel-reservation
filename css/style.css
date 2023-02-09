@@ -1,0 +1,38 @@
+/* Author : Anjali Soman
+Date :  09-02-2023*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: rgb(238, 174, 202);
+    background: radial-gradient(
+        circle,
+        rgba(238, 174, 202, 1) 0%,
+        rgba(148, 187, 233, 1) 100%
+    );
+}
+.row {
+    height: 100vh;
+}
+span {
+    color: #f00;
+}
+
+h6::before {
+    content: "*";
+    color: #f00;
+}
+.bc {
+    margin-top: 20%;
+}
+@media screen and (max-width: 576px) {
+    .maincolumn {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .but {
+        width: 90px;
+    }
+}

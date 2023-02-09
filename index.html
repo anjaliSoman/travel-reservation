@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="A sample website" />
+        <title>Travel Reservation</title>
+        <!-- Bootstrap Css -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+        />
+        <!-- Custom Css -->
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-column align-items-center">
+                <div
+                    class="col-12 col-sm-5 my-auto bg-light rounded-4 p-4 mx-2 maincolumn"
+                >
+                    <div class="text-center">
+                        <h1 class="text-primary">Travel Reservation</h1>
+                    </div>
+                    <div class="mb-1 ms-5">
+                        <h1 class="h6 text-primary">
+                            <span>* </span>denotes mandatory
+                        </h1>
+                    </div>
+                    <form
+                        action="confirmation.html"
+                        onsubmit="return validate()"
+                    >
+                        <div class="mx-5">
+                            <div class="d-flex justify-content-between py-1">
+                                <div class="col-12 col-sm-12 py-1">
+                                    <div
+                                        class="d-flex justify-content-between py-1"
+                                    >
+                                        <div>
+                                            <label for="name" class=""
+                                                ><h6>Full name</h6></label
+                                            >
+                                        </div>
+                                        <div>
+                                            <input
+                                                type="text"
+                                                placeholder="Enter Full Name"
+                                                name="name"
+                                                id="name"
+                                                class="rounded-3 p-1 border-primary"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="d-flex justify-content-between py-2"
+                                    >
+                                        <div>
+                                            <label for="email" class="fw-bold"
+                                                ><h6>Email address</h6></label
+                                            >
+                                        </div>
+                                        <div>
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                id="email"
+                                                class="rounded-3 p-1 border-primary"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="d-flex justify-content-between py-1"
+                                    >
+                                        <div>
+                                            <label for="package" class="fw-bold"
+                                                ><h6>
+                                                    Select Tour Package
+                                                </h6></label
+                                            >
+                                        </div>
+                                        <div>
+                                            <select
+                                                name="package"
+                                                id="package"
+                                                class="rounded-3 px-2 py-1 border-primary"
+                                            >
+                                                <option value="select">
+                                                    Pick any tour package
+                                                </option>
+                                                <option value="mysore">
+                                                    Mysore-Wayanad
+                                                </option>
+                                                <option value="goa">
+                                                    Goa-Hampi
+                                                </option>
+                                                <option value="monroe">
+                                                    Monroe-Island
+                                                </option>
+                                                <option value="ooty">
+                                                    Ooty-koorg
+                                                </option>
+                                                <option value="maldives">
+                                                    Maldives
+                                                </option>
+                                                <option value="">
+                                                    Gavi-Adayar
+                                                </option>
+                                                <option value="manali">
+                                                    Kulu-Manali
+                                                </option>
+                                                <option value="ladakh">
+                                                    Ladakh
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="d-flex justify-content-between py-2"
+                                    >
+                                        <div>
+                                            <label for="adate" class="fw-bold"
+                                                ><h6>Arrival date</h6></label
+                                            >
+                                        </div>
+                                        <div>
+                                            <input
+                                                type="date"
+                                                name="adate"
+                                                id="adate"
+                                                placeholder="m/d/y"
+                                                class="rounded-3 py-1 border-primary pe-5"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="d-flex justify-content-between py-2"
+                                    >
+                                        <div>
+                                            <label for="persons" class="fw-bold"
+                                                ><h6>
+                                                    Number of persons
+                                                </h6></label
+                                            >
+                                        </div>
+                                        <div>
+                                            <input
+                                                type="text"
+                                                name="persons"
+                                                id="persons"
+                                                class="rounded-3 p-1 border-primary"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <label for="avail" class="fw-bold"
+                                                ><h6>
+                                                    What would you want to
+                                                    avail?
+                                                </h6></label
+                                            >
+                                        </div>
+                                        <div
+                                            class="d-flex row-gap-3 flex-column me-5 pe-4"
+                                        >
+                                            <div class="d-flex me-2">
+                                                <div>
+                                                    <input
+                                                        type="checkbox"
+                                                        name="boarding"
+                                                        id="bc"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label
+                                                        for="boarding"
+                                                        class="fw-bold"
+                                                        >Boarding</label
+                                                    >
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex">
+                                                <div>
+                                                    <input
+                                                        type="checkbox"
+                                                        name="fooding"
+                                                        id="fc"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label
+                                                        for="fooding"
+                                                        class="fw-bold"
+                                                        >Fooding</label
+                                                    >
+                                                </div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div>
+                                                    <input
+                                                        type="checkbox"
+                                                        name="sightseeing"
+                                                        id="sc"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label
+                                                        for="sightseeing"
+                                                        class="fw-bold"
+                                                        >Sight seeing</label
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="d-flex justify-content-between py-2"
+                                    >
+                                        <div>
+                                            <label for="coupon" class=""
+                                                ><h5 class="h6">
+                                                    Discount Coupon code
+                                                </h5></label
+                                            >
+                                        </div>
+                                        <div>
+                                            <input
+                                                type="text"
+                                                name="coupon"
+                                                id="coupon"
+                                                class="rounded-3 p-1 border-primary"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="d-flex justify-content-between py-2"
+                                    >
+                                        <label for="tconditions" class="fw-bold"
+                                            ><h6>
+                                                Terms and conditions
+                                            </h6></label
+                                        >
+                                        <div
+                                            class="me-5 d-flex flex-column row-gap-2 pe-5"
+                                        >
+                                            <div class="d-flex">
+                                                <div>
+                                                    <input
+                                                        type="radio"
+                                                        name="tconditions"
+                                                        id="agree"
+                                                        value="agree"
+                                                    />
+                                                </div>
+                                                <div class="fw-bold pe-3">
+                                                    <label for="agree"
+                                                        >Agree</label
+                                                    >
+                                                </div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div>
+                                                    <input
+                                                        type="radio"
+                                                        name="tconditions"
+                                                        id="disagree"
+                                                        value="disagree"
+                                                    />
+                                                </div>
+                                                <div class="fw-bold">
+                                                    <label for="disagree"
+                                                        >Disagree</label
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-3 mx-auto but">
+                                <input
+                                    type="submit"
+                                    value="SUBMIT"
+                                    class="btn btn-outline-primary rounded-3 px-3"
+                                />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery CDN -->
+        <script
+            src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+            crossorigin="anonymous"
+        ></script>
+        <!-- Bootstrap Js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Custom script -->
+        <script src="js/script.js"></script>
+    </body>
+</html>
