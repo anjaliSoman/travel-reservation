@@ -5,8 +5,8 @@ function validate() {
     let s = document.getElementById("package").value;
     let d = document.getElementById("adate").value;
     let p = document.getElementById("persons").value;
-    let agree = document.getElementById("agree").value;
-    let dagree = document.getElementById("disagree").value;
+    let agree = document.getElementById("agree");
+    let dagree = document.getElementById("disagree");
     let nregx = /^[a-z A-Z]{2,15}$/;
     let eregx = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     if (n == "") {
@@ -32,7 +32,10 @@ function validate() {
         alert("Please choose a package");
         return false;
     } else if (isNaN(p)) {
-        alert("Number of persons be a number!");
+        alert("Number of persons should be a number!");
+        return false;
+    } else if (p <= 0) {
+        alert("Minimum 1 person should be included!");
         return false;
     } else if (agree.checked == false && dagree.checked == false) {
         alert("Please Agree or Disagree the terms and Conditions");
